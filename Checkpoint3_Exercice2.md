@@ -83,9 +83,13 @@ systemctl restart ssh
 
 ## Partie 3 : Analyse du stockage
 
-### Q.2.3.1 Quels sont les systèmes de fichiers actuellement montés ?
+### Q.2.3.1 Quels sont les systèmes de fichiers actuellement montés ?  
 
-### Q.2.3.2 Quel type de système de stockage ils utilisent ?
+<P ALIGN="center"><IMG src="https://github.com/julien-Nmd/CHECKPOINT-3/blob/main/CHECKPOINT-3-capture-18.png" width=800></P>  
+
+### Q.2.3.2 Quel type de système de stockage ils utilisent ?  
+
+Les types de stochage sont donc devtmpfs, tmpfs, ext4 et ext2.  
 
 ### Q.2.3.3 Ajouter un nouveau disque de 8,00 Gio au serveur et réparer le volume RAID
 

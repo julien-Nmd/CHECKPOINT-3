@@ -117,3 +117,9 @@ Ensuite, retour dans la console Group Policy Management.
 
 Clic droit sur LabUsers et sélectionné "Create a GPO in this domain, and link it here".  
 Nommée "Drive-Mount" => OK => clic droit => Edit  
+Puis je suis allé dans User Configuration > Preferences > Windows Settings > Drive Maps.  
+J'ai double cliqué dessus puis j'ai sélectionné Create et j'ai rentré le chemin du lecteur partagé à savoir \\SRVWIN01\Share_E, j'ai rentré Share drive E dans Label as et j'ai sélectionné le lecteur E dans la liste déroulante.  
+Apply => OK  
+<P ALIGN="center"><IMG src="https://github.com/julien-Nmd/CHECKPOINT-3/blob/main/CHECKPOINT-3-capture-12.png" width=600></P>    
+J'ai refait exactement la même opération pour le lecteur F:\
+  

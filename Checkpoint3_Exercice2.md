@@ -55,24 +55,32 @@ Pour faire ça, il faut d'abord générer une clé sur ma machine locale en ouvr
 ```
 ssh-keygen -t rsa -b 4096 -C "julien.normand@gmail.com"
 ```
+<P ALIGN="center"><IMG src="https://github.com/julien-Nmd/CHECKPOINT-3/blob/main/CHECKPOINT-3-capture-15.png" width=600></P>  
 Puis toujours depuis le terminal de ma machine locale j'envoie la clé publique directement sur la machine debian avec la commande :  
+
 ```
 ssh-copy-id -i ~/.ssh/id_rsa.pub julien@192.168.1.56
 ```
+<P ALIGN="center"><IMG src="https://github.com/julien-Nmd/CHECKPOINT-3/blob/main/CHECKPOINT-3-capture-16.png" width=600></P>  
 Bien sûr il faut mettre l'ip de la debian et le nom d'utiilisateur créé précédemment.  
 Ensuite on retoutne sur la machine Debian pour encore modifier le fichier de configuration SSH :  
 ```
 nano /etc/ssh/sshd_config
 ```
 On recherche ces 2 lignes et on les modifie ainsi :  
+
 ```
 PubkeyAuthentication yes
 PasswordAuthentication no
 ```
+
+<P ALIGN="center"><IMG src="https://github.com/julien-Nmd/CHECKPOINT-3/blob/main/CHECKPOINT-3-capture-17.png" width=600></P>  
 Puis on relance encore le service :  
+
 ```
 systemctl restart ssh
 ```
+
 ## Partie 3 : Analyse du stockage
 
 ### Q.2.3.1 Quels sont les systèmes de fichiers actuellement montés ?

@@ -112,8 +112,20 @@ Puis :
 `fd` pour RAID Linux auto  
 `w` pour écrire la partition et quitter l'utilitaire  
 
+Puis j'ai ajouté le nouveau disque au RAID avec la commande :  
+```bash
+mdadm --add /dev/md0 /dev/sdb1
+```
+Ensuite j'ai vérifié avec :  
+```bash
+mdadm --detail /dev/md0
+```
+<P ALIGN="center"><IMG src="https://github.com/julien-Nmd/CHECKPOINT-3/blob/main/CHECKPOINT-3-capture-19.png" width=800></P>  
 
-### Q.2.3.4 Ajouter un nouveau volume logique LVM de 2 Gio qui servira à héberger des sauvegardes. Ce volume doit être monté automatiquement à chaque démarrage dans l'emplacement par défaut : /var/lib/bareos/storage.
+On voit bien le statut `clean` et les 2 volumes sont bien synchronisés.  
+
+### Q.2.3.4 Ajouter un nouveau volume logique LVM de 2 Gio qui servira à héberger des sauvegardes. Ce volume doit être monté automatiquement à chaque démarrage dans l'emplacement par défaut : /var/lib/bareos/storage.  
+
 
 ### Q.2.3.5 Combien d'espace disponible reste-t-il dans le groupe de volume ?
 ## Partie 4 : Sauvegardes

@@ -87,9 +87,11 @@ systemctl restart ssh
 
 <P ALIGN="center"><IMG src="https://github.com/julien-Nmd/CHECKPOINT-3/blob/main/CHECKPOINT-3-capture-18.png" width=800></P>  
 
+Les systèmes de fichiers actuellement montés sont ext2, ext4 et swap.
+
 ### Q.2.3.2 Quel type de système de stockage ils utilisent ?  
 
-Les types de stochage sont donc devtmpfs, tmpfs, ext4 et ext2.  
+Les types de stochage sont dev/sda, /dev/md0 et LVM.
 
 ### Q.2.3.3 Ajouter un nouveau disque de 8,00 Gio au serveur et réparer le volume RAID
 

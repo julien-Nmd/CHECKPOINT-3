@@ -93,7 +93,25 @@ Les systèmes de fichiers actuellement montés sont ext2, ext4 et swap.
 
 Les types de stochage sont dev/sda, /dev/md0 et LVM.
 
-### Q.2.3.3 Ajouter un nouveau disque de 8,00 Gio au serveur et réparer le volume RAID
+### Q.2.3.3 Ajouter un nouveau disque de 8,00 Gio au serveur et réparer le volume RAID  
+  
+Pour faire ça j'ai ajouter un disque virtuel de 8 Go comme indiqué puis j'ai redémarré la VM et me suis connecté en root.  
+J'ai d'abord vérifié la présence du disque avec un `lsblk`.  
+Ensuite je l'ai partitionné en RAID auto :  
+```bash
+fdisk /dev/sdb/
+```
+Puis : 
+`n` nouvelle partition  
+`p` partition primaire  
+`1` numéro de partition  
+`ENTREE` pour le premier secteur par defaut  
+`ENTREE` pour le dernier secteur par défaut (soit la totalité du disque)  
+`t` pour le type de partition  
+`L` qui affichera tous les types possibles  
+`fd` pour RAID Linux auto  
+`w` pour écrire la partition et quitter l'utilitaire  
+
 
 ### Q.2.3.4 Ajouter un nouveau volume logique LVM de 2 Gio qui servira à héberger des sauvegardes. Ce volume doit être monté automatiquement à chaque démarrage dans l'emplacement par défaut : /var/lib/bareos/storage.
 

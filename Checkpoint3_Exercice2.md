@@ -137,7 +137,12 @@ Il reste 1.79 G d'espace dispo dans le groupe de volume.
 Le logiciel bareos est installé sur le serveur.
 Les composants bareos-dir, bareos-sd et bareos-fd sont installés avec une configuration par défaut.
 
-### Q.2.4.1 Expliquer succinctement les rôles respectifs des 3 composants bareos installés sur la VM.
+### Q.2.4.1 Expliquer succinctement les rôles respectifs des 3 composants bareos installés sur la VM.  
+
+**- bareos-dir**  
+Pour **Bareos Director**, c'est lui qui est responsable de la planification, du contrôle et du lancement des tâches de sauvegardes.  
+**- bareos-sd**  
+Pour **Bareos Storage Daemon**, 
 ## Partie 5 : Filtrage et analyse réseau
 
 ### Q.2.5.1 Quelles sont actuellement les règles appliquées sur Netfilter ?

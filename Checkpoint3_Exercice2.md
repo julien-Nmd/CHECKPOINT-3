@@ -125,9 +125,13 @@ mdadm --detail /dev/md0
 On voit bien le statut `clean` et les 2 volumes sont bien synchronisés.  
 
 ### Q.2.3.4 Ajouter un nouveau volume logique LVM de 2 Gio qui servira à héberger des sauvegardes. Ce volume doit être monté automatiquement à chaque démarrage dans l'emplacement par défaut : /var/lib/bareos/storage.  
+<P ALIGN="center"><IMG src="https://github.com/julien-Nmd/CHECKPOINT-3/blob/main/CHECKPOINT-3-capture-20.png" width=800></P>   
+<P ALIGN="center"><IMG src="https://github.com/julien-Nmd/CHECKPOINT-3/blob/main/CHECKPOINT-3-capture-21.png" width=800></P> 
 
-
-### Q.2.3.5 Combien d'espace disponible reste-t-il dans le groupe de volume ?
+### Q.2.3.5 Combien d'espace disponible reste-t-il dans le groupe de volume ?  
+<P ALIGN="center"><IMG src="https://github.com/julien-Nmd/CHECKPOINT-3/blob/main/CHECKPOINT-3-capture-22.png" width=800></P>   
+Il reste 1.79 G d'espace dispo dans le groupe de volume.
+  
 ## Partie 4 : Sauvegardes
 
 Le logiciel bareos est installé sur le serveur.

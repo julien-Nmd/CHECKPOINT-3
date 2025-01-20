@@ -142,13 +142,26 @@ Les composants bareos-dir, bareos-sd et bareos-fd sont installés avec une confi
 **- bareos-dir**  
 Pour **Bareos Director**, c'est lui qui est responsable de la planification, du contrôle et du lancement des tâches de sauvegardes.  
 **- bareos-sd**  
-Pour **Bareos Storage Daemon**, 
+Pour **Bareos Storage Daemon**, permet d'effectuer les sauvegardes sur la machine. Il peut effectuer des sauvegardes sur toutes les machines ou il est installé et sur différents supports.
+**- bareos fd**  
+Pour **Bareos File Daemon**, ce composant est installé sur chaque machine devant être sauvegardée.
+Il est en charge de collecter les informations à sauvegarder et de les envoyer au **Bareos Storage Daemon**.  
+  
 ## Partie 5 : Filtrage et analyse réseau
 
-### Q.2.5.1 Quelles sont actuellement les règles appliquées sur Netfilter ?
+### Q.2.5.1 Quelles sont actuellement les règles appliquées sur Netfilter ?  
 
-### Q.2.5.2 Quels types de communications sont autorisées ?
+<P ALIGN="center"><IMG src="https://github.com/julien-Nmd/CHECKPOINT-3/blob/main/CHECKPOINT-3-capture-23.png" width=800></P>  
 
-### Q.2.5.3 Quels types sont interdit ?
+### Q.2.5.2 Quels types de communications sont autorisées ?  
 
+On peut voir que le filtre autorise :
+- La communication interne de la machine  
+- Les connections entrantes sur le port 22 en TCP, donc la connection SSH est autorisée
+- Les protocoles ICMP en ipv4 et en ipv6, donc le ping est autorisé
+
+### Q.2.5.3 Quels types sont interdit ?  
+  
+`ct state invalid drop`indique que les paquets considérés comme invalides seront rejetés.  
+  
 ### Q.2.5.4 Sur nftables, ajouter les règles nécessaires pour autoriser bareos à communiquer avec les clients bareos potentiellement présents sur l'ensemble des machines du réseau local sur lequel se trouve le serveur.

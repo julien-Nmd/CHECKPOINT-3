@@ -164,4 +164,25 @@ On peut voir que le filtre autorise :
   
 `ct state invalid drop`indique que les paquets considérés comme invalides seront rejetés.  
   
-### Q.2.5.4 Sur nftables, ajouter les règles nécessaires pour autoriser bareos à communiquer avec les clients bareos potentiellement présents sur l'ensemble des machines du réseau local sur lequel se trouve le serveur.
+### Q.2.5.4 Sur nftables, ajouter les règles nécessaires pour autoriser bareos à communiquer avec les clients bareos potentiellement présents sur l'ensemble des machines du réseau local sur lequel se trouve le serveur.  
+
+```bash
+# Créer une table et y ajouter une chaine
+nft add table inet filter
+nft add chain inet filter input { type filter hook input priority 0; policy drop; }
+
+# Autoriser les connexions établies ou associées
+nft add rule inet filter input ct state established,related accept
+
+# Autoriser le trafic de la boucle locale
+nft add rule inet filter input iifname "lo" accept
+
+# Autoriser le trafic entrant sur les ports Bareos depuis le réseau local
+nft add rule inet filter input ip saddr 192.168.1.0/24 tcp dport {9101, 9102, 9103} accept
+
+# rendre cette configuration persistante en la sauvegardant dans le fichier par défaut :
+nft list ruleset > /etc/nftables.conf
+
+
+```
+
